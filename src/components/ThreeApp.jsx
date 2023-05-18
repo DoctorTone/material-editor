@@ -1,13 +1,19 @@
 import React from "react";
-import { Box } from "@react-three/drei";
+import { OrbitControls, Box, Stage } from "@react-three/drei";
 import { SCENE } from "../state/Config.js";
 
 const ThreeApp = () => {
   return (
     <>
-      <ambientLight intensity={SCENE.ambientIntensity} />
-      <pointLight position={SCENE.lightPosition} />
-      <Box args={[12, 12, 12]} material-color="hotpink" />
+      <Stage
+        adjustCamera={2}
+        intensity={0.5}
+        shadows="contact"
+        environment="city"
+      >
+        <Box args={[3, 3, 3]} material-color="red" />
+      </Stage>
+      <OrbitControls />
     </>
   );
 };
