@@ -6,7 +6,7 @@ import { SCENE } from "./state/Config.js";
 function App() {
   return (
     <>
-      <Canvas camera={{ position: SCENE.cameraPosition }}>
+      <Canvas camera={{ position: SCENE.cameraPosition, fov: SCENE.fov }}>
         <ThreeApp />
       </Canvas>
     </>
