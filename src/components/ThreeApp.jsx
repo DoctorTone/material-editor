@@ -1,6 +1,6 @@
 import React from "react";
 import { OrbitControls, Box, Stage } from "@react-three/drei";
-import { SCENE } from "../state/Config.js";
+import { Lucy } from "../models/Lucy.jsx";
 
 const ThreeApp = () => {
   return (
@@ -11,7 +11,7 @@ const ThreeApp = () => {
         shadows="contact"
         environment="city"
       >
-        <Box args={[3, 3, 3]} material-color="red" />
+        <Lucy />
       </Stage>
       <OrbitControls />
     </>
