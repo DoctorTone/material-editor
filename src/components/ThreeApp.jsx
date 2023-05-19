@@ -8,7 +8,7 @@ const ThreeApp = () => {
       <Stage
         adjustCamera={true}
         intensity={0.5}
-        shadows="contact"
+        shadows={false}
         environment="city"
       >
         <Lucy />
