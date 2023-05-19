@@ -6,7 +6,7 @@ const ThreeApp = () => {
   return (
     <>
       <Stage
-        adjustCamera={2}
+        adjustCamera={true}
         intensity={0.5}
         shadows="contact"
         environment="city"
