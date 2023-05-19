@@ -8,7 +8,7 @@ function App() {
     <>
       <Canvas>
         <ThreeApp />
-        <Perf position={"top-left"} />
+        <Perf position={"top-left"} deepAnalyze={false} overClock={false} />
       </Canvas>
     </>
   );
