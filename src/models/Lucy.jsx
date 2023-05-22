@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Lucy(props) {
-  const { nodes, materials } = useGLTF("./models/lucy.gltf");
+  const { nodes } = useGLTF("./models/lucy.gltf");
 
   return (
     <group {...props} dispose={null}>

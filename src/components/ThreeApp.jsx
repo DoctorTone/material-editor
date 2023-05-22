@@ -1,5 +1,5 @@
 import React from "react";
-import { OrbitControls, Box, Stage } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 import { Lucy } from "../models/Lucy.jsx";
 import { useControls } from "leva";
 
@@ -25,12 +25,12 @@ const ThreeApp = () => {
       max: 1,
     },
     roughness: {
-      value: 1,
+      value: 0,
       min: 0,
       max: 1,
     },
     metalness: {
-      value: 0,
+      value: 1,
       min: 0,
       max: 1,
     },
