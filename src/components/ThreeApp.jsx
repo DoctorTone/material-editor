@@ -4,16 +4,24 @@ import { Lucy } from "../models/Lucy.jsx";
 import { useControls } from "leva";
 
 const ThreeApp = () => {
-  const { name, aNumber } = useControls({ name: "World", aNumber: 0 });
+  const { shadows, modelColor, transparent, opacity } = useControls({
+    shadows: false,
+    modelColor: "#ffffff",
+    transparent: false,
+    opacity: {
+      value: 1,
+      min: 0,
+      max: 1,
+    },
+  });
   return (
     <>
       <Stage
         adjustCamera={true}
         intensity={0.5}
-        shadows={false}
-        environment="city"
-      >
-        <Lucy />
+        shadows={shadows && "contact"}
+        environment="city">
+        <Lucy color={modelColor} transparent={transparent} opacity={opacity} />
       </Stage>
       <OrbitControls />
     </>

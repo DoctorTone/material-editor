@@ -7,12 +7,12 @@ import { useGLTF } from "@react-three/drei";
 
 export function Lucy(props) {
   const { nodes, materials } = useGLTF("./models/lucy.gltf");
+
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes.lucy001.geometry}
-        material={materials["Default OBJ.001"]}
-      />
+      <mesh geometry={nodes.lucy001.geometry}>
+        <meshPhysicalMaterial {...props} />
+      </mesh>
     </group>
   );
 }
