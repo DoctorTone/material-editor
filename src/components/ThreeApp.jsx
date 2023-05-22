@@ -4,14 +4,55 @@ import { Lucy } from "../models/Lucy.jsx";
 import { useControls } from "leva";
 
 const ThreeApp = () => {
-  const { shadows, modelColor, transparent, opacity } = useControls({
+  const {
+    shadows,
+    modelColor,
+    transparent,
+    opacity,
+    roughness,
+    metalness,
+    reflectivity,
+    clearcoat,
+    clearcoatRoughness,
+    envMapIntensity,
+  } = useControls({
     shadows: false,
     modelColor: "#ffffff",
-    transparent: false,
+    transparent: true,
     opacity: {
       value: 1,
       min: 0,
       max: 1,
+    },
+    roughness: {
+      value: 1,
+      min: 0,
+      max: 1,
+    },
+    metalness: {
+      value: 0,
+      min: 0,
+      max: 1,
+    },
+    reflectivity: {
+      value: 0,
+      min: 0,
+      max: 1,
+    },
+    clearcoat: {
+      value: 0,
+      min: 0,
+      max: 1,
+    },
+    clearcoatRoughness: {
+      value: 0,
+      min: 0,
+      max: 1,
+    },
+    envMapIntensity: {
+      value: 1,
+      min: 0,
+      max: 5,
     },
   });
   return (
@@ -21,7 +62,17 @@ const ThreeApp = () => {
         intensity={0.5}
         shadows={shadows && "contact"}
         environment="city">
-        <Lucy color={modelColor} transparent={transparent} opacity={opacity} />
+        <Lucy
+          color={modelColor}
+          transparent={transparent}
+          opacity={opacity}
+          roughness={roughness}
+          metalness={metalness}
+          reflectivity={reflectivity}
+          clearcoat={clearcoat}
+          clearcoatRoughness={clearcoatRoughness}
+          envMapIntensity={envMapIntensity}
+        />
       </Stage>
       <OrbitControls />
     </>
