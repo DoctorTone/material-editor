@@ -1,10 +1,13 @@
 import React, { Suspense } from "react";
 import { OrbitControls, Stage } from "@react-three/drei";
 import { Lucy } from "../models/Lucy.jsx";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
+import { getDeviceStatus } from "../state/Config.js";
 import { Loading } from "./Loading.jsx";
 
 const ThreeApp = () => {
+  const isMobile = getDeviceStatus();
+
   const {
     shadows,
     modelColor,
@@ -56,6 +59,7 @@ const ThreeApp = () => {
       max: 5,
     },
   });
+
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -78,6 +82,7 @@ const ThreeApp = () => {
         </Stage>
       </Suspense>
       <OrbitControls />
+      {/* <Leva collapsed={true} /> */}
     </>
   );
 };

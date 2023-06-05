@@ -1,12 +1,11 @@
 import React from "react";
 import { Html } from "@react-three/drei";
+import Spinner from "react-bootstrap/Spinner";
 
 export const Loading = () => {
   return (
     <Html>
-      <div className="text-center">
-        <h1>Loading...</h1>
-      </div>
+      <Spinner animation="grow" />
     </Html>
   );
 };
