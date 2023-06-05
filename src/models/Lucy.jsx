@@ -9,7 +9,7 @@ export function Lucy(props) {
   const { nodes } = useGLTF("./models/lucy.gltf");
 
   return (
-    <group {...props} dispose={null}>
+    <group dispose={null}>
       <mesh geometry={nodes.lucy001.geometry}>
         <meshPhysicalMaterial {...props} />
       </mesh>
