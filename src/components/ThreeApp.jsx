@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { OrbitControls, Stage } from "@react-three/drei";
 import { Lucy } from "../models/Lucy.jsx";
 import { useControls } from "leva";
+import { Loading } from "./Loading.jsx";
 
 const ThreeApp = () => {
   const {
@@ -57,23 +58,25 @@ const ThreeApp = () => {
   });
   return (
     <>
-      <Stage
-        adjustCamera={true}
-        intensity={0.5}
-        shadows={shadows && "contact"}
-        environment="city">
-        <Lucy
-          color={modelColor}
-          transparent={transparent}
-          opacity={opacity}
-          roughness={roughness}
-          metalness={metalness}
-          reflectivity={reflectivity}
-          clearcoat={clearcoat}
-          clearcoatRoughness={clearcoatRoughness}
-          envMapIntensity={envMapIntensity}
-        />
-      </Stage>
+      <Suspense fallback={<Loading />}>
+        <Stage
+          adjustCamera={true}
+          intensity={0.5}
+          shadows={shadows && "contact"}
+          environment="city">
+          <Lucy
+            color={modelColor}
+            transparent={transparent}
+            opacity={opacity}
+            roughness={roughness}
+            metalness={metalness}
+            reflectivity={reflectivity}
+            clearcoat={clearcoat}
+            clearcoatRoughness={clearcoatRoughness}
+            envMapIntensity={envMapIntensity}
+          />
+        </Stage>
+      </Suspense>
       <OrbitControls />
     </>
   );
